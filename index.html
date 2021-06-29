@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+  <title>Reštaurácia Viktória</title>
+  <meta name="description" content="Objednajte si jedlo jednoducho online." />
+
+  <link href="https://piknik.cc/favicon.ico" type="image/x-icon" rel="icon" />
+
+  <link href="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/css/app.css" rel="stylesheet" />
+
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+  <div id="app">
+    <v-app id="inspire">
+      <v-parallax class="hero"
+        src="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/img/demo/hero-image.jpg">
+        <v-container class="d-flex" style="height: 100%">
+          <v-col cols="12" align-self="end" class="text-left mb-16">
+            <h1 class="mb-4 text-h2 text-lg-h1 font-weight-bold">
+              Reštaurácia Viktória
+            </h1>
+            <h4 class="text-subtitle-1 mb-2">
+              Viničná 14, 90027 Bernolákovo
+            </h4>
+            <v-btn rounded small outlined color="white" href="#more-info">
+              Viac informácií
+            </v-btn>
+          </v-col>
+        </v-container>
+      </v-parallax>
+
+      <v-container fluid>
+        <piknik-embeddable restaurant_id="demo" default_language="sk" primary_color="#8A993D" floating_button="true"
+          agreements_url="/podmienky"></piknik-embeddable>
+      </v-container>
+
+      <v-footer padless id="more-info" color="#8A993D">
+        <v-container fluid>
+          <v-container>
+            <v-row no-gutters class="my-4">
+              <v-col class="text-left white--text" cols="12">
+                <h4 class="text-h4 font-weight-bold mb-2">Informácie</h4>
+              </v-col>
+
+              <v-col cols="12">
+                <div class="scroller no-scrollbar">
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Kontakt</span>
+                    <p class="body-2">
+                      <!-- <a href="mailto:EMAIL"
+                        class="text-decoration-none white--text">EMAIL</a> -->
+                      <a href="http://www.restauraciaviktoria.sk/" class="text-decoration-none white--text"
+                        target="_blank" rel="noopener">restauraciaviktoria.sk</a> <br>
+                      <a href="tel:0917066266" class="text-decoration-none white--text">0917 066 266</a><br>
+
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Adresa</span>
+                    <p class="body-2">
+                      <a href="https://g.page/viktoriabernolakovo?share" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none white--text">Viničná 14<br />
+                        90027 Bernolákovo</a><br>
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text mr-8">
+                    <span class="overline font-weight-bold">Otváracie hodiny</span>
+                    <p class="body-2">
+                      Pracovné dni 10:00 - 22:00<br />
+                      Sobota 11:00 - 22:00<br />
+                      Nedeľa 11:00 - 21:00<br />
+                      <!-- <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on">Zobraziť všetko</span>
+                        </template>
+                        <v-list-item-subtitle>Pondelok 10:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Utorok 10:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Streda 10:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Štvrtok 10:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Piatok 10:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Sobota 11:00 - 22:00</v-list-item-subtitle>
+                        <v-list-item-subtitle>Nedeľa 11:00 - 21:00</v-list-item-subtitle>
+                      </v-tooltip> -->
+                    </p>
+                  </v-col>
+                  <v-col class="text-left white--text">
+                    <span class="overline font-weight-bold">Donáškové zóny</span>
+                    <p class="body-2">
+                      Bernolákovo 0 €<br />
+                      Ivanka pri Dunaji 0 €<br />
+                      <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on">Zobraziť všetko</span>
+                        </template>
+                        <v-list-item-subtitle>Bernolákovo 0 €</v-list-item-subtitle>
+                        <v-list-item-subtitle>Ivanka pri Dunaji 0 €</v-list-item-subtitle>
+                        <v-list-item-subtitle>Chorvátsky Grob 0 €</v-list-item-subtitle>
+                        <v-list-item-subtitle>Veľký Biel 0 €</v-list-item-subtitle>
+                      </v-tooltip>
+                    </p>
+                  </v-col>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters class="my-4">
+              <v-col class="text-left white--text align-self-center" md="6" cols="12">
+                <span class="mr-3">zo ♥ vytvoril</span>
+                <a href="http://piknik.cc" target="_blank" rel="noopener">
+                  <img src="https://cdn.jsdelivr.net/gh/sjasik/piknik.cc@latest/images/piknik-logo-white.svg" width="72"
+                    alt="Piknik.cc logo" />
+                </a>
+              </v-col>
+              <v-spacer></v-spacer>
+              <v-col class="text-right white--text align-self-center d-none d-md-flex ml-2" cols="auto">
+                © {{ new Date().getFullYear() }} Všetky práva vyhradené Reštaurácia Viktória
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-container>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      vuetify: new Vuetify({}),
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/js/app.js"></script>
+
+  <style>
+    /* Selection */
+    ::-moz-selection {
+      color: #fff;
+      background: #8A993D;
+    }
+
+    ::selection {
+      color: #fff;
+      background: #8A993D;
+    }
+
+    /* Hero image */
+    .v-parallax .v-parallax__image-container {
+      filter: brightness(0.8) grayscale(0.1);
+    }
+
+    .hero img.logo {
+      position: absolute;
+    }
+
+    /* Footer - horizontal scroll */
+    .scroller {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: auto;
+      white-space: nowrap;
+      align-items: start;
+      display: flex;
+    }
+
+    .scroller div {
+      display: inline-block;
+      width: auto;
+    }
+
+    .no-scrollbar {
+      scrollbar-width: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</body>
+
+</html>
