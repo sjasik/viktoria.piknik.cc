@@ -4,7 +4,8 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" /> -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.x/dist/vuetify.min.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 
   <title>Reštaurácia Viktória</title>
@@ -23,6 +24,15 @@
       <v-parallax class="hero"
         src="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/img/demo/hero-image.jpg">
         <v-container class="d-flex" style="height: 100%">
+          <v-row align-self="start" class="px-3 mt-2" style="position: absolute">
+            <v-col cols="auto" class="text-left align-self-top">
+              <v-btn rounded x-small outlined color="white" href="https://www.restauraciaviktoria.sk/">
+                <v-icon left>mdi-arrow-left</v-icon>
+                Domov
+              </v-btn>
+            </v-col>
+          </v-row>
+
           <v-col cols="12" align-self="end" class="text-left mb-16">
             <h1 class="mb-4 text-h2 text-lg-h1 font-weight-bold">
               Reštaurácia Viktória
